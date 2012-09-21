@@ -1,0 +1,38 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" media="all" href="style.css" />
+        <!-- script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script -->
+<script type="text/javascript" src="carouFredSel/jquery.js"></script>
+<script type="text/javascript" src="carouFredSel/jquery.carouFredSel-5.6.1.js"></script>
+        <script type="text/javascript" src="jquery.upload-1.0.2.js"></script>
+
+<script type="text/javascript">
+    $(function() {
+    $("#foo1").carouFredSel();
+        $('#file1').change(function() {
+            $(this).upload('upload.php', function(res) {
+                $(res).insertAfter(this);
+            }, 'html');
+        });
+    });
+  </script>
+</head>
+<body>
+<div class="image_carousel">
+<div id="foo1">
+    <img src="upload/img1.jpg" width="30" height="30"/>
+    <img src="upload/img2.jpg" width="30" height="30"/>
+    <img src="upload/img3.jpg" width="30" height="30"/>
+    <img src="upload/img4.jpg" width="30" height="30"/>
+    <img src="upload/img5.jpg" width="30" height="30"/>
+    <img src="upload/img6.jpg" width="30" height="30"/>
+    <img src="upload/img7.jpg" width="30" height="30"/>
+    <img src="upload/img8.jpg" width="30" height="30"/>
+</div>
+    <div class="clearfix"></div>
+</div>
+
+  <input type="file" name="file" id="file1" />
+
+</body>
+</html>

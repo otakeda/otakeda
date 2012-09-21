@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="deecorp,ディーコープ,BtoB,B2B,ビジネス,IT,動画,ソフト,サービス" />
+<meta name="description" content="ITを中心にビジネスでいま注目の製品／技術／サービスを動画で紹介します。" />
+
+<link rel="stylesheet" href="masonry/css/style.css" />
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script src="masonry/jquery.masonry.min.js"></script>
+<title>DeeCorp - 最新ITツール</title>
+
+<script type="text/javascript">
+function ajaxerror(req,texterror,errorthrown){
+	alert(texterror);
+	$("#container").append(req.responseText);
+}
+$(function(){
+//	$.getJSON("jsonp.txt?callback=callback", function(data){
+//alert($("#container").html());
+	$("[data-table]").each(function(){
+		var tablename= $(this).data("table");
+		var wherestr= encodeURI($(this).data("where"));
+		var orderby= encodeURI($(this).data("orderby"));
+		$.ajax({
+		type:"GET",
+		dataType:"jsonp",
+		async:false,
+		url: "http://s-stg.deecorp.jp/jqjsonp.php",
+		data: "table_name="+tablename+"&where="+wherestr+"&orderby="+orderby,
+		error: ajaxerror,
+		success: function(data){
+
+			for (i=0; i<data[tablename].length; i++){
+//			 	var lastrow=$("table[data-table="+tablename+"] tr:last");
+			 	var lastrow=$("[data-table="+tablename+"] [data-row]:last");
+				lastrow.clone(true).insertAfter(lastrow);
+				lastrow.find("[data-col]").each(function(){
+					var col=$(this).data("col");
+//alert(data[tablename][i][col]+":"+col);
+					$(this).html(data[tablename][i][col]);
+				});
+			}
+//			$("#column1").append(colname+"/");
+//			$("#column1").append(data.count+"/");
+//			$("#column1").append(data["members"].length+"/");
+//			$("#column1").append(data["members"][1]["member_id"]+"/");
+//			$("#column1").append(data[tablename][0][colname]+"/");
+		} // success func
+		});  // .ajax
+	}); //table
+
+	$(".box:odd").addClass("col1").css("color","red");
+	$(".box:even").addClass("col2").css("color","blue");
+	 $('#container').masonry({
+  	    itemSelector: '.box',
+//		isAnimated:true,
+      	columnWidth: 200
+    });
+});
+    
+</script>
+
+<body  >
+<section id="content">
+	<h1 style="font-size:120%;"><a href="?">ビジネスでいますぐ使えるIT技術</a></h1>
+        <p style="font-size:120%;">いま注目のIT製品／サービス／技術に関連した動画を「音声がなくても理解できる」「短くても素晴らしさがわかる」ものを厳選してご紹介します</p>
+	
+	
+<div id="container" class="transitions-enabled clearfix" data-table="corprep" data-orderby="update_date desc" data-where="update_date>'2012/01/01'">
+	<div class="box" data-row="0">
+		<p data-col="videotag">-</p>
+		<p data-col="corp_name">-</p>
+		<p data-col="rep_text">-</p>
+	
+	</div>
+	<!-- table data-table="corprep" data-orderby="update_date desc" data-where="update_date>'2012/01/01'" -->
+	<!-- tr -->
+	<!-- /tr -->
+	<!-- /table -->
+</div> <!-- /#column1  -->
+ 
+ 
+</section>
+</body>
+</html>
+

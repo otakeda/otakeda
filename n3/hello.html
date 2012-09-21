@@ -1,0 +1,150 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<meta charset="utf-8" />
+	<title>My Page</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+<!-- link rel="stylesheet" href="./otake.min.css" -->
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+<script  type="text/javascript">
+function send_rest(url)
+{
+
+        httpObj = new XMLHttpRequest();
+        httpObj.open('GET',url,true);
+        httpObj.setRequestHeader('Pragma', 'no-cache');
+        httpObj.setRequestHeader('Cache-Control', 'no-cache');
+        httpObj.setRequestHeader('If-Modified-Since', 'Thu, 01 Jun 1970 00:00:00 GMT');
+        httpObj.send(null);
+        httpObj.onreadystatechange = function(){
+                if ( (httpObj.readyState == 4) && (httpObj.status == 200) ){
+                if (parseJSON(httpObj.responseText)==0) showDebug("JSON data:No data found");
+
+                }
+        }
+}
+function parseJSON(jsData)
+{
+        var data = eval("("+jsData+")");
+	$('#jsonzone').text(jsData);
+	var i =0;
+	while (i < data.rows.length)
+	{
+		switch (data.rows[i].data_type){
+		case 'text':
+		$('#'+(data.rows[i].id_name)).text(data.rows[i].val);
+		break;
+		default:
+		$('#'+(data.rows[i].id_name)).html(data.rows[i].val);
+		break;
+		}
+		alert(data.rows[i].val);
+	}
+}
+$( '#news' ).live( 'pageinit',function(event){
+  alert( 'This page was just enhanced by jQuery Mobile!' );
+	$('#player1').text("aaa");
+});
+
+$( '#top' ).live( 'pageinit',function(event){
+	$('#btn0').click( function(){
+		$('#jsonzone').text('pretext.........');
+		try{
+		send_rest('json.txt');
+//send_rest('n3json.php');
+		var text0 = $.ajax({
+		  type: "GET",
+		  url: "sample_json.txt"
+		}).responseText;
+		var a=0;
+		$.getJSON('./sample_json.txt', function(data) {
+			var items = [];
+		});
+		}catch (e) { alert("You messed something up!");
+		}
+
+
+	});
+});
+</script>
+
+</head> 
+<body> 
+
+<div data-role="page" id="top" data-title="DeeCorp Top">
+
+	<div data-role="header">
+		<h1>Top</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+			<p>Hello world</p>		
+		<input type="search" name="search" id="search-basic" value="" />
+		</ul>
+	<a href="#news" data-role="button" data-rel="dialog" data-transition="slide" data-icon="arrow-r">新着</a>
+	<a href="#cate" data-role="button" data-rel="dialog" data-transition="pop" data-icon="arrow-r">カテゴリ</a>
+	</div><!-- /content -->
+	<div data-role="footer">
+		<h1>@dee all rights reserved.</h1>
+	</div><!-- /footer -->
+
+</div><!-- /page -->
+<div data-role="page" id="news" data-title="news">
+	<div data-role="header">
+		<h1>新着情報	</h1>
+	</div><!-- /header -->
+	<div data-role="content">	
+		<p>news</p>		
+		<div data-role="collapsible-set">
+			<div data-role="collapsible" data-collapsed="true">
+			<h3>Q1</h3>
+			<p>I'm the collapsible set content for section B.</p>
+			</div>
+			<div data-role="collapsible">
+			<h3>Q2</h3>
+			<p>I'm the collapsible set content for section B.</p>
+			</div>
+		</div>
+	<a href="#top"  data-role="button" data-transition="fade" data-icon="arrow-l">to top</a>
+	</div><!-- /content -->
+	<div data-role="footer" >
+		<h1>@dee all rights reserved.</h1>
+	</div><!-- /footer -->
+</div><!-- /page -->
+<div data-role="page" id="cate" data-title="category">
+	<div data-role="header">
+		<h1>CATE</h1>
+	<div id="player1">p1 </div>
+	</div><!-- /header -->
+	<div data-role="content">	
+			<p>cateicate</p>		
+		<ul data-role="listview" data-inset="true" data-filter="true">
+		<li><a href="kensetsu">建設</a></li>
+		<li><a href="ITs">IT/インターネット</a></li>
+		<li><a href="">印刷物</a></li>
+		<li><a href="#">オフィス什器</a></li>
+		<li><a href="#">販促物</a></li>
+		</ul>
+	<a href="#top"  data-role="button" data-transition="fade" data-icon="arrow-l">to top</a>
+	<a href="#"  id="btn0" data-role="button" data-transition="fade" data-icon="arrow-l">click</a>
+	<div id="jsonzone">jz</div>
+	<div id="col1">col1</div>
+	<div id="col2">col2</div>
+	<table> 
+		<tr>
+			<td><div id="c1_1"></div></td>
+		</tr>
+	<table>
+	</div><!-- /content -->
+	<div data-role="footer" >
+		<h1>@dee all rights reserved.</h1>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>
+

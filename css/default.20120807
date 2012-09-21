@@ -1,0 +1,150 @@
+@charset "utf-8";
+
+/*--------------------------------------
+
+	- Reset
+	
+	- common (html,link,float:left,right,clear,clearfix)
+	
+	- for accessibility
+	
+	
+---------------------------------------*/
+
+/*----------------------------------------------------
+	Reset
+----------------------------------------------------*/
+html {
+	overflow-y: scroll;
+}
+
+body, div, dl, dt, dd, ul, li , h1, h2, h3, h4, h5, h6, form, input, textarea, p, td {
+	margin: 0;
+	padding: 0;
+}
+
+address, em, strong {
+	font-style: normal;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+object, embed {
+	vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-style: normal;
+	font-weight: bold;
+}
+
+img {
+	border: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+p {
+	/*margin-bottom: 1em;*/
+}
+
+.center {
+	text-align:center;
+}
+
+.left {
+	text-align:left;
+}
+
+.right {
+	text-align:right;
+}
+
+/*----------------------------------------------------
+
+	common
+	
+----------------------------------------------------*/
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	color: #000000;
+//	font-size: small;
+	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	line-height:1.5;
+}
+
+/*---------- LINK ----------*/
+a:link {
+	text-decoration: underline;
+	color: #3333cc;
+}
+a:visited {
+	text-decoration: underline;
+	color: #3333cc; 
+//	color: #663399; /*（紫）*/
+}
+
+/*---------- LEFT ----------*/
+.floleft {
+	float:left;
+	margin: 6px 16px 10px 0;
+}
+
+/*---------- RIGHT ----------*/
+.floright {
+	float:right;
+	margin: 6px 0 10px 16px;
+}
+
+/*---------- CLEAR ----------*/
+.clear {
+	clear:both;
+	height:0;
+}
+
+/*---------- CLEARFIX ----------*/
+/* IE 以外のモダンブラウザ向け */
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+/* IE7、Mac IE5 向け */
+.clearfix { display: inline-block; }
+
+/* IE6 以前向け */
+/* Hides from IE-mac ¥*/
+* html .clearfix { height: 1%; }
+.clearfix { display: inline-block; }
+/* End hide from IE-mac */
+
+
+/*----------------------------------------------------
+
+	for accessibility
+	
+----------------------------------------------------*/
+
+.forAccessibility {
+	display:none;
+	}
+
+
+
+
+
+
+

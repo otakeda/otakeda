@@ -1,0 +1,25 @@
+{ 
+"game_key": "e65f346f0595c297b346fc62ad9725b5",
+"player1": "322",
+"player2": "",
+"status": "entry",
+"answer1": "",
+"answer2": "" ,
+"hit":[
+	{ 
+	"playerno": "1",
+	"hits": "2",
+	"hit": "3",
+	"eats": "4",
+	"bites": "5" 
+	},
+	{ 
+	"playerno": "1",
+	"hits": "2",
+	"hit": "3",
+	"eats": "4",
+	"bites": "5" 
+	}
+]
+}
+

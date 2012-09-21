@@ -1,0 +1,103 @@
+{
+    "placemarks": [
+        {
+            "name": "2",
+            "description": "",
+            "url": "",
+            "lookat": {
+                "latitude": "35.658068",
+                "longitude": "139.751599"
+            }
+        },
+        {
+            "name": "5",
+            "description": "",
+            "url": "",
+            "lookat": {
+                "latitude": "35.658068",
+                "longitude": "139.751599"
+            }
+        },
+        {
+            "name": "6",
+            "description": "",
+            "url": "",
+            "lookat": {
+                "latitude": "35.658068",
+                "longitude": "139.751599"
+            }
+        },
+        {
+            "name": "7",
+            "description": "",
+            "url": "",
+            "lookat": {
+                "latitude": "35.658068",
+                "longitude": "139.751599"
+            }
+        },
+        {
+            "name": "8",
+            "description": "",
+            "url": "",
+            "lookat": {
+                "latitude": "35.658068",
+                "longitude": "139.751599"
+            }
+        },
+        {
+            "name": "3",
+            "description": "",
+            "url": "",
+            "lookat": {
+                "latitude": "35.658068",
+                "longitude": "139.751599"
+            }
+        },
+        {
+            "name": "4",
+            "description": "",
+            "url": "",
+            "lookat": {
+                "latitude": "35.658068",
+                "longitude": "139.751599"
+            }
+        },
+        {
+            "name": "9",
+            "description": "",
+            "url": "",
+            "lookat": {
+                "latitude": "35.658068",
+                "longitude": "139.751599"
+            }
+        },
+        {
+            "name": "1",
+            "description": "",
+            "url": "",
+            "lookat": {
+                "latitude": "35.658068",
+                "longitude": "139.751599"
+            }
+        },
+        {
+            "name": "10",
+            "description": "",
+            "url": "",
+            "lookat": {
+                "latitude": "35.658068",
+                "longitude": "139.751599"
+            }
+        },
+        {
+            "name": "11",
+            "description": "",
+            "url": "",
+            "lookat": {
+                "latitude": "35.658068",
+                "longitude": "139.751599"
+            }
+        }
+    ]
+}

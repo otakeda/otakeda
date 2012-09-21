@@ -1,0 +1,487 @@
+@charset "utf-8";
+
+/*----------------------------------------------------
+
+	- DeeCorp 会社口コミCSS
+		Copyright (c) 2010 DeeCorp. All rights reserved.
+
+----------------------------------------------------*/
+/*
+body {
+	background:#ffffff;
+	color:#000000;
+}
+*/
+
+a {
+	font-weight:bold;
+	text-decoration:underline;
+}
+a:link {
+	color:#993300;
+}
+a:active {
+//	color:#cc3300;
+	color:#993300;
+}
+a:hover {
+	color:#cc3300;
+}
+a:visited {
+//	color:#663300;
+	color:#993300;
+}
+
+.cursorPointer { /* カーソルの変更 */
+  cursor:pointer;
+}
+
+.imeDisabled { /* IME禁止モード（IE専用）*/
+  ime-mode:disabled;
+}
+
+#totalWrapper { /* コンテンツ全体 */
+//	width:785px;
+	width:785px;
+	margin:15px auto 0px auto;
+	padding:0px;
+}
+
+#siteName { /* サイトタイトル・イメージ背景 */
+	background:#006699 url("../images/bg_header.jpg") no-repeat;
+	width:785px;
+	height:129px;
+	padding-top:6px;
+}
+
+#siteName h1 a {
+	color:#ffffff;
+	font-size:18px;
+	margin:0px 0px 0px 20px;
+	text-decoration:none;
+}
+#siteName h1 a:link,
+#siteName h1 a:visited {
+	color:#ffffff;
+/*
+	text-decoration:none;
+*/
+}
+#siteName h1 a:active,
+#siteName h1 a:hover {
+	color:#ffffff;
+	text-decoration:underline;
+}
+
+#siteName p {
+	margin:20px 320px 0px 100px;
+	padding:0px;
+}
+
+p {
+/*	padding:0px 18px 10px 32px;*/
+	line-height:1.5em;
+}
+
+.boundary { /* このページの先頭へ移動 */
+	text-align:right;
+	padding:30px 0px 0px 0px;
+	margin:0px 0px 5px 0px;
+	clear:both;
+}
+
+
+/*----------------------------------------------------
+	フッタ
+----------------------------------------------------*/
+#foot {
+	margin: 5px 5px 5px 5px;
+	display:block;
+	background: #006699;
+	position:fixed;
+	bottom:0;
+	width:50px
+	height:100px;
+	padding: 10px 10px 10px 10px;
+	right:0;
+-moz-border-radius-topleft: 10px;
+-moz-border-radius-topright:10px;
+-moz-border-radius-bottomleft:10px;
+-moz-border-radius-bottomright:10px;
+-webkit-border-top-left-radius:10px;
+-webkit-border-top-right-radius:10px;
+-webkit-border-bottom-left-radius:10px;
+-webkit-border-bottom-right-radius:10px;
+border-top-left-radius:10px;
+border-top-right-radius:10px;
+border-bottom-left-radius:10px;
+border-bottom-right-radius:10px;
+}
+#guide { /* フッターの上 */
+	width: 785px;
+	text-align:left;
+	margin: 0 auto;
+	clear:both;
+}
+#footer { /* フッタ */
+	background:#006699 url("../images/bg_footer.gif") left top repeat-x;
+	height:160px;
+	clear:both;
+}
+
+.naviContents { /* ロゴとお問い合わせボタン領域、フッタ内リンク等 */
+	width:785px;
+	margin:0 auto;
+}
+
+#footer ul {
+	padding-top:18px;
+	margin-bottom:20px;
+}
+
+#footer li { /* フッタテキストリンク */
+	display:inline;
+	color:#ffffff;
+	padding:0 14px;
+	border-right:1px #ffffff solid;
+	font-weight:normal;
+	text-decoration:none;
+}
+#footer li a,
+#footer address a {
+	color:#ffffff;
+	text-decoration:none;
+	font-weight:normal;
+}
+#footer li a:link,
+#footer li a:active,
+#footer li a:visited,
+#footer address a:link,
+#footer address a:active,
+#footer address a:visited {
+	color:#ffffff;
+/*
+	text-decoration:none;
+	font-weight:normal;
+*/
+}
+#footer address a:hover,
+#footer li a:hover {
+	color:#ffffff;
+	text-decoration:underline;
+	font-weight:normal;
+}
+#footer li.last {
+	border-right:0px;
+}
+
+#footer address {
+	color:#ffffff;
+	text-align:right;
+}
+
+#column1 { /* 1retu */
+	width:710px;
+	margin:16px 0px 16px 16px;
+	padding:0px 0px 0px 0px;
+	position: relative;
+	z-index:0;
+	top: -1px;
+	left:0px
+}
+/*	background:#9;
+	background:#ffffff;
+	float:left;
+	postion:absolute;
+	top: -100px;
+*/
+
+/*----------------------------------------------------
+	左カラム
+----------------------------------------------------*/
+#columnL { /* 左カラム（メインカラム ）*/
+	width:464px;
+	float:left;
+	background:#006699;
+	margin:20px 0px 20px 0px;
+	padding:0px;
+}
+
+#columnLbottom { /* ボトム角丸 */
+	background:url("../images/bg_left_bottom.gif") left bottom no-repeat;
+	height:21px;
+}
+
+h2 {
+	text-indent:-9999px;
+	line-height:0px;
+	margin:0px;
+	padding:0px;
+}
+
+#search { /* 検索フォームエリア height:146px; */ 
+	background:url("../images/bg_search.gif") left top no-repeat;
+	height:146px;
+}
+
+/*	text-align:center;*/
+#search p {
+	margin-top:46px;
+	text-align:center;
+}
+
+#search #suggest {
+	margin-left:100px;
+	text-align:left;
+}
+
+p#result {
+	color:#ffffff;
+	margin:2px 70px 0px 76px !important;
+}
+
+#search input {
+	background:#c7d9e1;
+	border:1px #333333 solid;
+	padding:2px;
+}
+
+#tweetArea { /* Tweetエリア全体枠 */
+	width:428px;
+	margin:0px auto;
+	padding-bottom:3px;
+	background:#ffffff url("../images/bg_left_inner.gif") left top repeat-y;
+	overflow:hidden;
+	word-wrap:break-word;
+}
+
+#tabArea { /* タブ切り替えエリア */
+	width:428px;
+	height:36px;
+	background:#ffffff url("../images/bg_tab.gif") left top repeat-y;
+	padding-top:2px;
+}
+
+#tabArea ul {
+	margin-left:18px;
+}
+
+#tabArea li {
+	list-style:none;
+	text-indent:-9999px;
+	display:block;
+	float:left;
+	margin-right:10px;
+}
+
+#tabArea li span {
+	display:block;
+	width:134px;
+	height:36px;
+}
+
+#tabArea li#head1 { /* 新着口コミタブ */
+	width:134px;
+	height:36px;
+	background:url("../images/btn_tab_new.gif") no-repeat;
+}
+
+#tabArea li#head1 a span {
+	background:url("../images/btn_tab_new_off.gif") no-repeat;
+}
+
+#tabArea li#head2 { /* あなたの口コミタブ */
+	width:134px;
+	height:36px;
+	background:url("../images/btn_tab_tweet.gif") no-repeat;
+}
+
+#tabArea li#head2 a span {
+	background:url("../images/btn_tab_tweet_off.gif") no-repeat;
+}
+
+.corpInfo { /* 企業情報エリア */
+	clear:both;
+	background:url("../images/bg_corp_info.gif") left top no-repeat;
+	padding-top:38px;
+}
+.corpInfo p {
+	margin-top:10px;
+	text-indent:36px;
+}
+
+h3 { /* 企業名 */
+	font-size:14px;
+	margin-left:36px;
+	border-left:5px #f49a24 solid;
+	line-height:20px;
+	padding-left:6px;
+}
+
+h3 img {
+	margin-left:6px;
+	vertical-align:top;
+}
+
+.corpInfo table { /* 企業情報項目 */
+	margin:12px 10px 13px 48px;
+}
+
+.corpInfo th,
+#columnR th {
+	font-weight:normal;
+	background:url("../images/ico_blue.gif") left center no-repeat;
+	padding-left:13px;
+	text-align:left;
+	white-space:nowrap;
+}
+
+.corpInfo td {
+	padding-left:8px;
+}
+
+.twitterList { /* TwitterFeed枠全体 */
+	margin:15px 9px 15px 36px;
+}
+
+.userIcon { /* ユーザーアイコン枠 */
+	width:48px;
+	float:left;
+}
+
+.tweet { /* Tweet枠 */
+	width:332px;
+	background:url("../images/bg_tweet.gif") 10px 0px repeat-y;
+	float:right;
+}
+
+.tweet p { /* Tweet本文 */
+	margin:0px 10px 0px 20px;
+}
+
+/*	border-collapse:separate; 
+	border:2px #ffffff solid;
+*/
+
+.tweet table { /* 入力欄 */
+	margin:0px 10px 0px 20px;
+	text-align:left;
+}
+
+.tweet p.tweetInfo { /* ユーザー名・投稿日時 */
+	text-align:right;
+	margin-bottom:1px;
+	color:#888888;
+}
+
+.tweetTop { /* Tweet枠上部角丸 */
+	width:332px;
+	background:url("../images/bg_tweet_top.gif") left top no-repeat;
+	padding-top:6px;
+}
+
+.tweetBottom { /* Tweet枠下部角丸 */
+	width:332px;
+	height:5px;
+	background:url("../images/bg_tweet_bottom.gif") right bottom no-repeat;
+}
+
+
+/*----------------------------------------------------
+	右カラム
+----------------------------------------------------*/
+#columnR { /* 右カラム */
+	width:306px;
+	float:right;
+}
+
+#twitterLogin { /* Twitterログインボタン枠 */
+	width:306px;
+	margin-bottom:12px;
+	background:url("../images/bg_login.gif") repeat-y;
+	z-index:1;
+}
+
+#twitterLogin p {
+	margin:0px 12px 0px 12px;
+	padding:0px;
+}
+
+#twitterLogin img#twitterBtn { /* Twitterログインボタン */
+	margin:10px 0px 10px 0px;
+}
+
+#twitterLogin p#signup { /* サインアップテキスト */
+	text-align:right;
+	font-size:11px;
+}
+
+#twitterLoginBottom { /* Twitterログイン枠下部 */
+	width:306px;
+	background:url("../images/bg_login_bottom.gif") left bottom no-repeat;
+	height:17px;
+	clear:both;
+}
+
+.detail {
+	width:306px;
+	height:107px;
+	margin-top:10px;
+	margin-bottom:10px;
+	background:url("../images/bg_detail.gif") left top no-repeat;
+}
+
+.detail p {
+	margin-left:74px;
+	margin-right:10px;
+	vertical-align:middle;
+}
+
+#columnR h4 {
+	display:block;
+	background:url("../images/bg_h4.gif") left top no-repeat;
+	text-indent:-9999px;
+	width:306px;
+	height:43px;
+	margin-bottom:6px;
+}
+
+#columnR table { /* 入力欄 */
+	margin:10px 0px;
+	border-collapse:separate;
+	border:2px #ffffff solid;
+}
+
+#columnR td {
+	padding:4px 0px;
+}
+
+#columnR input,
+#columnR textarea,
+#columnR button {
+	background:#f4f1e9;
+	border:1px #999999 solid;
+	padding:2px;
+}
+
+#suggest {
+        /*  position: absolute;*/
+          position: relative;
+          background-color: #FFFFFF;
+          border: 1px solid #CCCCFF;
+          width: 252px;
+        }
+#suggest div {
+          padding: 1px;
+          display: block;
+          width: 250px;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+#suggest div.select{
+          color: #FFFFFF;
+          background-color: #3366FF;
+        }
+#suggest div.over{
+          background-color: #99CCFF;
+        }
