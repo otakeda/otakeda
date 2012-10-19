@@ -1,0 +1,113 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<meta charset="utf-8" />
+	<title>fx</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="jqplot/jquery.jqplot.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<link rel="stylesheet" href="style.css" />
+
+	<script type="text/javascript" src="jqplot/jquery.min.js"></script>
+	<script type="text/javascript" src="jqplot/jquery.jqplot.min.js"></script>
+	<!-- script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script -->
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+	<script type="text/javascript" src="fx.js"></script>
+</head> 
+<body> 
+<div data-role="page" id="top" data-title="top"  data-theme="a" data-content-theme="a">
+  <div data-role="header">
+    <h1>signal</h1>
+    <a href="#config" data-icon="star" data-transition="slide">Top</a>
+  </div><!-- /header -->
+
+  <div data-role="content">	
+    <div class="top0" width=100%>
+      <img src="images/sunflower.jpg" width=320 >
+    </div>
+<div class="content-primary main-content">
+ <ul data-role="listview"> 
+      <li>
+        <a href="#graph"  data-transition="slide" >
+	<img  alt="USDJPY" class="ui-li-icon">USD/JPY </a>
+        <span class="ui-li-count">ari</span>
+      </li>
+</ul>
+</div>
+  </div><!-- /content -->
+  <div data-role="footer"  data-position="fixed" >
+    <div id="msg_top"></div>
+    <div class="msg_common"></div>
+    会員番号<div class="cmember_id"></div>
+    TOKEN:<div class="ctoken"></div>
+  </div><!-- /footer -->
+</div><!-- /page -->
+
+
+<div data-role="page" id="config" data-title="Config" data-fullscreen="false"  data-theme="a" data-content-theme="a">
+  <div data-role="header" >
+    <a href="#top" data-icon="back" data-rel="back" data-direction="reverse">Top</a>
+	<h1>Config</h1>
+  </div><!-- /header -->
+  <div data-role="content"  class="content-primary main-content">	
+<div class="ui-body ui-body-c">
+    <a href="#top"  data-role="button" data-transition="fade" data-icon="arrow-l" data-inline="true">Top Pageへ</a>
+			<div data-role="fieldcontain"> 
+				<label for="slider2">BB:</label> <select name="slider2" id="slider2" data-role="slider"> <option value="off">Off</option> <option value="on">On</option> 
+				</select> 
+			</div> 
+			<div data-role="fieldcontain"> 
+				<label for="select-choice-1" class="select">aa</label> 
+				<select name="select-choice-1" id="select-choice-1"> 
+					<option value="standard">Standard: 7 day</option> 
+					<option value="rush">Rush: 3 days</option> 
+					<option value="express">Express: next day</option> 
+					<option value="overnight">Overnight</option> 
+				</select> 
+			</div> 
+
+			<div data-role="fieldcontain"> 
+				<label for="slider">Days:</label> 
+			 	<input type="range" name="slider" id="slider" value="0" min="0" max="200"  /> 
+			</div> 
+
+
+
+<div data-role="fieldcontain"> 
+<fieldset data-role="controlgroup" > 
+<legend>Line</legend> 
+<input type="radio" name="radio-choice-b" id="radio-choice-1" value="1" checked="checked" /> 
+<label for="radio-choice-1">±１σ</label> 
+<input type="radio" name="radio-choice-b" id="radio-choice-2" value="2" /> 
+<label for="radio-choice-2">±２σ</label> 
+<input type="radio" name="radio-choice-b" id="radio-choice-3" value="3" /> 
+<label for="radio-choice-3">±３σ</label> 
+</fieldset> 
+</div> 
+
+</div>
+
+  </div><!-- /content -->
+  <div data-role="footer" >
+    <div id="msg_config"></div>
+    <div class="msg_common"></div>
+  </div><!-- /footer -->
+</div><!-- /page -->
+
+<div data-role="page" id="graph" data-title="Graph" data-fullscreen="false"  data-theme="a" data-content-theme="a">
+  <div data-role="header" data-position="fixed">
+    <a href="#top" data-icon="back" data-rel="back" data-direction="reverse">Top</a>
+    <h1>USD/JPY</h1>
+  </div><!-- /header -->
+  <div data-role="content">	
+    <p>Graph</p>		
+	<div id="graph0" style="height:400px;width:300px; "> </div>
+  </div><!-- /content -->
+  <div data-role="footer" data-position="fixed">
+    <div id="msg_graph"></div><div class="msg_common"></div>
+  </div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>
+

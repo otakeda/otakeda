@@ -4,7 +4,6 @@
 	<meta charset="utf-8" />
 	<title>名刺管理</title> 
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
 	<link rel="stylesheet" href="style.css" />
 
@@ -18,7 +17,6 @@
 	<script type="text/javascript" src="meishi.js"></script>
 	<!-- script type="text/javascript" src="carouFredSel/jquery.carouFredSel-5.6.1.js"></script -->
 	<!-- script type="text/javascript" src="GoogleMaps/js/jquery.GoogleMaps.js"></script -->
-
 </head> 
 <body> 
 <div data-role="page" id="top" data-title="meishi"  data-theme="a" data-content-theme="a">
@@ -49,7 +47,7 @@
         <a href="#admin" data-role="button"  data-transition="slide" data-icon="gear" data-iconpos="left" data-inline="false">名刺管理</a>
       </div>
     </div><!-- /grid-b -->
-    <div class="ui-grid-a">
+    <!-- div class="ui-grid-a">
       <div class="ui-block-a">
         iPhoneをご利用の方
       </div>
@@ -68,16 +66,17 @@
       <div class="ui-block-b">
         <img src="images/QRcode.gif" >
       </div>
-    </div><!-- /grid-a -->
+    </div --><!-- /grid-a -->
   </div><!-- /content -->
   <div data-role="footer"  data-position="fixed" >
-    <div class="systemmsg"></div>
+    <div id="msg_top"></div>
+    <div class="msg_common"></div>
   </div><!-- /footer -->
 </div><!-- /page -->
 
 <div data-role="page" id="mycard" data-title="My Card" data-fullscreen="false"  data-theme="a" data-content-theme="a">
   <div data-role="header" data-position="fixed">
-    <a href="#top" data-icon="back" data-rel="back" data-direction="reverse">Back</a>
+    <a href="#top" data-icon="back" data-rel="back" data-direction="reverse">Top</a>
     <h1>自分の名刺</h1>
     <a href="javascript:clearSaved();" data-icon="refresh" data-iconpos="right" id="refresh_btn" >初期化</a>
   </div><!-- /header -->
@@ -108,14 +107,16 @@
     <hr />
   </div><!-- /content -->
   <div data-role="footer" data-position="fixed">
-    <div class="systemmsg"></div>
+    <div id="msg_mycard"></div>
+    <div class="msg_common"></div>
     会員番号<div class="cmember_id"></div>
     TOKEN:<div class="ctoken"></div>
   </div><!-- /footer -->
 </div><!-- /page -->
 <div data-role="page" id="search" data-title="Search" data-fullscreen="false"  data-theme="a" data-content-theme="a">
   <div data-role="header" >
-		<h1>交換相手を探す</h1>
+    <a href="#top" data-icon="back" data-rel="back" data-direction="reverse">Top</a>
+	<h1>交換相手を探す</h1>
   </div><!-- /header -->
   <div data-role="content">	
   近い人を探す
@@ -137,13 +138,15 @@
       <td><span id="longitude"></span></td>
       </tr>
     </table>
-    <div class="systemmsg"></div>
+    <div id="msg_search"></div>
+    <div class="msg_common"></div>
     会員番号<div class="cmember_id"></div>
     TOKEN:<div class="ctoken"></div>
   </div><!-- /footer -->
 </div><!-- /page -->
 <div data-role="page" id="admin" data-title="Admin" data-fullscreen="false"  data-theme="a" data-content-theme="a">
   <div data-role="header" >
+    <a href="#top" data-icon="back" data-rel="back" data-direction="reverse">Top</a>
     <h1>管理</h1>
   </div><!-- /header -->
   <div data-role="content">	
@@ -154,13 +157,12 @@
     <p><a href="#top"  data-role="button" data-transition="fade" data-icon="arrow-l" data-inline="true">Top Pageへ</a></p>
   </div><!-- /content -->
   <div data-role="footer" >
-    <div class="systemmsg"></div>
+    <div id="msg_admin"></div>
+    <div class="msg_common"></div>
     会員番号<div class="cmember_id"></div>
     TOKEN:<div class="ctoken"></div>
   </div><!-- /footer -->
 </div><!-- /page -->
-
-
 </body>
 </html>
 

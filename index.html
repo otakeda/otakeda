@@ -6,8 +6,11 @@
 <meta name="description" content="ITを中心にビジネスでいま注目の製品／技術／サービスを動画で紹介します。" />
 
 <link rel="stylesheet" href="masonry/css/style.css" />
+<link rel="stylesheet" href="masonry/css/style.css" />
+<link rel="stylesheet" href="css/colorbox.css" type="text/css" media="all" />
 
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script src="colorbox/colorbox/jquery.colorbox-min.js"></script>
 <script src="masonry/jquery.masonry.min.js"></script>
 <title>DeeCorp - 最新ITツール</title>
 
@@ -19,6 +22,8 @@ function ajaxerror(req,texterror,errorthrown){
 $(function(){
 //	$.getJSON("jsonp.txt?callback=callback", function(data){
 //alert($("#container").html());
+	$("#viphone").colorbox({iframe:true, width:320,height:416});
+	$("#vipad").colorbox({iframe:true, width:768,height:960});
 	$("[data-table]").each(function(){
 		var tablename= $(this).data("table");
 		var wherestr= encodeURI($(this).data("where"));
@@ -75,11 +80,11 @@ $(function(){
 		<p data-col="rep_text">-</p>
 	
 	</div>
-	<!-- table data-table="corprep" data-orderby="update_date desc" data-where="update_date>'2012/01/01'" -->
-	<!-- tr -->
-	<!-- /tr -->
-	<!-- /table -->
 </div> <!-- /#column1  -->
+<div id="vm">
+<p><a id="viphone" href="n3/meishi.html" title="meishi">iPhone</a></p>
+<p><a id="vipad" href="n3/meishi.html" title="meishi">iPad</a></p>
+</div>
  
  
 </section>

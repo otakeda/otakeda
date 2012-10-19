@@ -319,7 +319,7 @@ p#result {
 }
 */
 .corpInfo a {
-	margin-left:20px;
+	margin-left:0px;
 	text-decoration:none;
 }
 /* 鉛筆の画像  */
@@ -364,6 +364,9 @@ h3 img {
 	white-space:nowrap;
 }
 
+.corpInfo input{
+	width:300px;
+}
 .graphArea {
 	margin: 10px auto 0px 100px;
 	z-index:2;
@@ -434,7 +437,7 @@ h3 img {
 	border:10px #006699 solid;
 */
 .videotag {
-	display:none;
+	display:block;
 	position:relative;
 	
 /*

@@ -1,0 +1,10 @@
+{ "prices" : [ 
+	{ "price_time": "2012/06/16", "open":101.1 ,"high":111.1,"low":100.0,"close":100.5 },
+	{ "price_time": "2012/06/15", "open":102.1 ,"high":111.1,"low":100.0,"close":100.5 },
+	{ "price_time": "2012/06/14", "open":103.1 ,"high":111.1,"low":100.0,"close":100.5 },
+	{ "price_time": "2012/06/13", "open":101.1 ,"high":111.1,"low":100.0,"close":100.5 },
+	{ "price_time": "2012/06/12", "open":102.1 ,"high":111.1,"low":100.0,"close":100.5 },
+	{ "price_time": "2012/06/11", "open":103.1 ,"high":111.1,"low":100.0,"close":100.5 },
+	{ "price_time": "2012/06/10", "open":100.1 ,"high":111.1,"low":100.0,"close":100.5 }
+	] 
+}

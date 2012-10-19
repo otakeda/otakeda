@@ -26,7 +26,7 @@ function dateCompe(str1, datetime2){
 function clearSaved(){
 	if (window.confirm('アプリを初期化します')){
 	localStorage.clear();
-	$(".systemmsg").text("clear storage");
+	$("div.msg_common").text("clear storage");
 	}
 }
 var commenthtml="";
@@ -95,7 +95,7 @@ function setRss(xml){
 }
 
 function ajaxError(req,texterror,errorthrown){
-	$(".systemmsg").html("cannot coummnicate web server"+texterror);
+	$("div.msg_common").html("cannot coummnicate web server"+texterror);
 	rss_success=false;
 	alert("サーバとの通信ができません");
 //	if (xml!=null) setRss(xml);
@@ -119,7 +119,7 @@ function searchUsers(member_id,lati,longi){
 		error: ajaxError,
 		success:  function(data){
 			min_dist2=100000.000000000011;
-			$(".systemmsg").text("count="+data.cards.length);
+			$("div.msg_common").text("count="+data.cards.length);
 			for (i =0; i<data.cards.length;i++){
 			if (data.cards[i].lati>0&&data.cards[i].longi>0){
 				marker_data.push({position: new google.maps.LatLng(data.cards[i].lati, data.cards[i].longi), 
@@ -146,7 +146,7 @@ function createRelation(partner_id){
 		timeout : 5000,
 		error: ajaxError,
 		success:  function(data){
-			$(".systemmsg").html(data.METHOD);
+			$("div.msg_common").html(data.METHOD);
 			alert("名刺をもらいました。(会員番号:"+partner_id+")");
 		}
 	});
@@ -162,7 +162,7 @@ function adminUsers(member_id){
 		timeout : 5000,
 		error: ajaxError,
 		success:  function(data){
-			$(".systemmsg").text("ユーザ数:"+data.cards.length);
+			$(".msg_common").text("ユーザ数:"+data.cards.length);
 			var basedate= new Date();
 			var basesec= basedate.getTime()-86400000*1;
 			var baseline=1;
@@ -195,7 +195,7 @@ function getUserInfo(member_id){
 		error: ajaxError,
 		success : function(data){ 
 			$('#img_mycard').attr('src', data.mycard.imgfile);
-			$(".systemmsg").text(data.mycard.imgfile);
+			$("div.msg_common").text(data.mycard.imgfile);
 			}
 		});
 }
@@ -236,7 +236,7 @@ function setMyPosition(lati,longi){
 		timeout : 5000,
 		error: ajaxError,
 		success:  function(data){
-			$(".systemmsg").html(data.METHOD);
+			$("div.msg_common").html(data.METHOD);
 			alert("Position set");
 		}
 	});
@@ -383,10 +383,7 @@ function onDeviceReady(){
 $(function(){
 
 	getDevice();
-
-
 	document.addEventListener("deviceready",onDeviceReady,false);
-
 
 	$('input[type=file]').change(function() {
 		var params = 'client_id=a';
@@ -395,7 +392,7 @@ $(function(){
 alert("param="+params);
 		$(this).upload('meishi.php', params,
 			function(data) {
-				$('.systemmsg').html(data);
+				$('div.msg_mycard').html(data);
 				member_id=data.mycard.meishi_id;
 				$('#img_before').attr('src',$('#img_mycard').attr('src'));
 				$('#img_mycard').attr('src', 'upload/'+data.imgfile.filename);
