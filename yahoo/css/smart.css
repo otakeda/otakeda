@@ -1,0 +1,395 @@
+﻿@charset "UTF-8";
+
+/* =============================
+** BASE
+============================= */
+
+body {
+	padding:0;
+	margin:0;
+	font-family:arial;
+	color:#333333;
+}
+
+#wrap {
+/*	width:480px;*/
+	margin:0 auto;
+}
+
+img {
+	border:none;
+	vertical-align:top;
+}
+
+/** リンクカラー **/
+
+a {
+	color:#0000CC;
+	outline:none;
+}
+
+a:hover {
+	color:#8b8be7;
+}
+
+/** HEADER
+============================= */
+
+#header {
+	margin:15px auto;
+	display:block;
+	zoom:1;
+	overflow:hidden;
+}
+
+#header h1 {
+	padding:0;
+	margin:0 0 0 10px;
+	float:left;
+}
+
+#header .h_r {
+	font-size:12px;
+	line-height:18px;
+	float:right;
+}
+
+/** FOOTER
+============================= */
+
+/** footer link area **/
+
+#footer-utility-area {
+	background:url(../images/footer-utility_bg_01.gif) repeat-x top;
+	display:block;
+	zoom:1;
+	overflow:hidden;
+	padding:14px 0 15px 10px;
+/*	padding:14px 0 30px 0;*/
+}
+
+#footer-utility-area ul {
+	padding:0;
+	margin:0;
+	list-style:none;
+	line-height:13px;
+}
+
+#footer-utility-area ul li {
+	padding:0 0 0 5px;
+	margin:0 0 0 5px;
+	float:left;
+	border-left:1px solid #cccccc;
+}
+
+#footer-utility-area ul li.pseudo-first-child {
+	padding:0;
+	border:none;
+}
+
+/** footer-banner-area **/
+
+#footer-banner-area {
+	border-top:2px solid #f8d1bb;
+	padding:10px 0 0 0;
+	display:block;
+	zoom:1;
+	overflow:hidden;
+}
+
+#footer-banner-area ul {
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+
+#footer-banner-area ul li {
+	float:left;
+	padding:0 18px 10px 0;
+	margin:0;
+}
+
+#footer-banner-area ul li.fba-none {
+	padding:0;
+}
+
+/** footer logo area **/
+
+#body-footer {
+	width:100%;
+	background:url(../images/footer-area_bg_01.gif) repeat-x;
+	height:60px;
+}
+
+#footer-area {
+	margin:0 auto;
+	padding:0 10px;
+}
+
+#footer-division {
+	float:right;
+}
+
+#footer-division ul {
+	padding:14px 0 0 0;
+	margin:0;
+	list-style:none;
+}
+
+#footer-division ul li {
+	padding:0 0 0 16px;
+	margin:0;
+	float:left;
+	background:url(../images/footer-area_separator_01.gif) no-repeat top left;
+}
+
+#footer-division ul li.pseudo-first-child {
+	background:none;
+}
+
+#footer-address {
+	padding:14px 0 0 0;
+}
+
+#footer-address address.corporate-name {
+	margin:0 0 9px 0;
+}
+
+a.f_link01 img {
+	background:url(../images/footer-area_btn_01.gif) no-repeat;
+	padding:0;
+	margin:0;
+}
+
+a.f_link01:hover img {
+	background:url(../images/footer-area_btn_01_o.gif) no-repeat;
+}
+
+/** NAVI
+============================= */
+
+.navi {
+	background:url(../images/navi_bg_orange.gif) repeat-x;
+	height:32px;
+	display:block;
+	zoom:1;
+	overflow:hidden;
+	font-size:14px;
+	line-height:26px;
+}
+
+.navi strong {
+	font-weight:normal;
+	padding:0 0 0 10px;
+	display:block;
+	zoom:1;
+	overflow:hidden;
+	float:left;
+	color:#FFFFFF;
+	font-weight:bold;
+}
+
+.navi ul {
+	padding:0;
+	margin:0;
+	list-style:none;
+	display:block;
+	zoom:1;
+	overflow:hidden;
+	float:right;
+}
+
+.navi ul li {
+	padding:4px 4px 0 0;
+	margin:0;
+	list-style:none;
+	float:left;
+	line-height:22px;
+}
+
+.navi ul li a.link01 img {
+	background:url(../images/link01m.gif) no-repeat;
+	width:61px;
+	height:22px;
+}
+
+.navi ul li a.link02 img {
+	background:url(../images/link02m.gif) no-repeat;
+	width:80px;
+	height:22px;
+}
+
+/* =============================
+** CONTENTS
+============================= */
+
+#category_list_on {
+	margin:10px auto;
+	display:block;
+	zoom:1;
+	overflow:hidden;
+}
+
+#category_list_on ul {
+	padding:0;
+	margin:0;
+	list-style:none;
+	font-size:14px;
+	line-height:24px;
+	border-top:1px dotted #000000;
+}
+
+#category_list_on ul li {
+	border-bottom:1px dotted #000000;	
+}
+
+#category_list_on ul.right_ul {
+	border-top:none;
+}
+
+#category_list_on ul li span {
+	padding:0 0 0 20px;
+	margin:0 0 0 10px;
+	color:#CCC;
+}
+
+#category_list_on ul li a.accordion_head {
+	text-decoration:underline;
+	cursor:pointer;
+	padding:0 0 0 20px;
+	margin:0 0 0 10px;
+	background:url(../images/def_li_mark.gif) no-repeat left;
+	font-weight:bold;
+	outline:none;
+	border:none;
+	display:block;
+	zoom:1;
+	overflow:hidden;
+}
+
+#category_list_on ul li a.accordion_head_active {
+	text-decoration:underline;
+	cursor:pointer;
+	padding:0 0 0 20px;
+	margin:0 0 0 10px;
+	background:url(../images/act_li_mark.gif) no-repeat left;
+	font-weight:bold;
+	display:block;
+	zoom:1;
+	overflow:hidden;
+}
+
+.active_li {
+	background:#ffe3ce;
+}
+
+.default_li {
+	background:#FFFFFF;
+}
+
+#category_list_on ul li .ac_close_out {
+	text-align:right;
+	display:block;
+	zoom:1;
+	overflow:hidden;
+	clear:both;
+}
+
+#category_list_on ul li a.ac_close {
+	color:#0000cc;
+	text-decoration:underline;
+	cursor:pointer;
+	padding:0 0 0 20px;
+	margin:0 0 0 10px;
+	background:url(../images/cls_li_mark.gif) no-repeat left;
+	font-size:12px;
+	line-height:30px;
+	text-align:right;
+}
+
+#category_list_on ul li .accordion_body {
+	padding:0 10px;
+}
+
+#category_list_on ul li .accordion_body ul {
+	border-top:1px solid #000;
+	border-bottom:1px solid #000;
+	width:100%;
+	border-collapse:collapse;
+	font-size:12px;
+	line-height:22px;
+}
+
+#category_list_on ul li .accordion_body ul li.items {
+	border-bottom:1px dotted #000;
+	margin-bottom:1px;
+	display:block;
+	zoom:1;
+	overflow:hidden;
+	padding:0;
+	margin:0;
+}
+
+#category_list_on ul li .accordion_body ul li.items p {
+	float:left;
+	font-size:12px;
+	line-height:22px;
+	width:130px;
+	padding:0;
+	margin:0;
+}
+
+#category_list_on ul li .accordion_body ul li.items span.spc {
+	text-align:center;
+	float:left;
+	width:100px;
+	color:#333333;
+	padding:0;
+	margin:0;
+}
+
+#category_list_on ul li .accordion_body ul li.items span.spr {
+	text-align:center;
+	float:right;
+	width:28px;
+	color:#333333;
+	padding:0;
+	margin:0;
+}
+
+#category_list_on ul li .accordion_body ul li.spt {
+	display:block;
+	clear:both;
+	zoom:1;
+	overflow:hidden;
+}
+
+#category_list_on ul li .accordion_body ul li.spt p {
+	width:130px;
+	text-align:center;
+	font-weight:bold;
+	color:#333333;
+	padding:0;
+	margin:0;
+	float:left;
+}
+
+#category_list_on ul li .accordion_body ul li.spt span.spc {
+	text-align:center;
+	float:left;
+	width:100px;
+	color:#333333;
+	font-weight:bold;
+	padding:0;
+	margin:0;
+}
+
+#category_list_on ul li .accordion_body ul li.spt span.spr {
+	text-align:center;
+	float:right;
+	width:28px;
+	color:#333333;
+	font-weight:bold;
+	padding:0;
+	margin:0;
+}
