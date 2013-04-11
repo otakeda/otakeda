@@ -1,93 +1,109 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="keywords" content="deecorp,ディーコープ,BtoB,B2B,ビジネス,IT,動画,ソフト,サービス" />
-<meta name="description" content="ITを中心にビジネスでいま注目の製品／技術／サービスを動画で紹介します。" />
+<title>JQuery MFUpload Plugins</title>
 
-<link rel="stylesheet" href="masonry/css/style.css" />
-<link rel="stylesheet" href="masonry/css/style.css" />
-<link rel="stylesheet" href="css/colorbox.css" type="text/css" media="all" />
+<style>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-<script src="colorbox/colorbox/jquery.colorbox-min.js"></script>
-<script src="masonry/jquery.masonry.min.js"></script>
-<title>DeeCorp - 最新ITツール</title>
-
-<script type="text/javascript">
-function ajaxerror(req,texterror,errorthrown){
-	alert(texterror);
-	$("#container").append(req.responseText);
+.files { background-color: #eee; width:190px; height:30px; float:left; margin: 0 5px 5px 0; padding:2px; font-size:10px;}
+.progress { width: 0%; background-color:#03C; height:4px; margin-top:5px;}
+.tn{
+	display:none;
 }
-$(function(){
-//	$.getJSON("jsonp.txt?callback=callback", function(data){
-//alert($("#container").html());
-	$("#viphone").colorbox({iframe:true, width:320,height:416});
-	$("#vipad").colorbox({iframe:true, width:768,height:960});
-	$("[data-table]").each(function(){
-		var tablename= $(this).data("table");
-		var wherestr= encodeURI($(this).data("where"));
-		var orderby= encodeURI($(this).data("orderby"));
-		$.ajax({
-		type:"GET",
-		dataType:"jsonp",
-		async:false,
-		url: "http://s-stg.deecorp.jp/jqjsonp.php",
-		data: "table_name="+tablename+"&where="+wherestr+"&orderby="+orderby,
-		error: ajaxerror,
-		success: function(data){
+.img0 .mi .limg{
+	position:relative;
+	width:60px;
+}
+.img0 .mi .simg{
+	position:relative;
+	width:20px;
+}
+.img0 .mi:hover .limg{
+	width:240px;
+	top:-40px;
+}
+.img0 .mi:hover .simg{
+	width:80px;
+	top:-40px;
+}
 
-			for (i=0; i<data[tablename].length; i++){
-//			 	var lastrow=$("table[data-table="+tablename+"] tr:last");
-			 	var lastrow=$("[data-table="+tablename+"] [data-row]:last");
-				lastrow.clone(true).insertAfter(lastrow);
-				lastrow.find("[data-col]").each(function(){
-					var col=$(this).data("col");
-//alert(data[tablename][i][col]+":"+col);
-					$(this).html(data[tablename][i][col]);
-				});
+</style>
+
+</head>
+
+<script type="text/javascript" src="jquery-1.5.1.min.js"></script>
+<script src="mfupload.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+$().ready(function() {
+
+	var errors="";
+	var todaymillisec = (new Date()).getTime();
+
+	$('#upload').mfupload({
+		
+		type		: 'jpeg,jpg,zip,png,gif,bmp',	//all types
+		maxsize		: 20,
+		post_upload	: "./upload.php",
+		folder		: "./upload/"+todaymillisec,
+		ini_text	: "Drag your file to here or click (max: 20MB each)",
+		over_text	: "Drop Here",
+		over_col	: 'white',
+		over_bkcol	: 'green',
+        
+		init		: function(){		
+			$("#uploaded").empty();
+		},
+		
+		start		: function(result){		
+			$("#uploaded").append("<div id='FILE"+result.fileno+"' class='files'>"+result.filename+"<div id='PRO"+result.fileno+"' class='progress'></div></div>");	
+		},
+
+		loaded		: function(result){
+			$("#PRO"+result.fileno).remove();
+			$("#FILE"+result.fileno).html("Uploaded: "+result.filename+" ("+result.size+")");			
+			$("#imglib").append("<div class=\"img0\">");
+			if (result.src) $("#imglib .img0:last").append("<span class=\"mi\">");
+			if (result.src) $("#imglib .img0:last .mi").append("<img class=\"limg\" src=\""+result.src+"\" title=\""+result.src+"\" alt=\""+result.src+"\" border=3>");
+			if (result.large) $("#imglib .img0:last .mi").append("<img class=\"limg\" src=\""+result.large+"\" title=\""+result.large+"\" alt=\""+result.large+"\" border=3>");
+			if (result.small) $("#imglib .img0:last .mi").append("<img class=\"simg\"src=\""+result.small+"\" title=\""+result.small+"\" alt=\""+result.small+"\" border=3>");
+			
+			if (result.zip) $("#ziparea").attr("href",result.zip).text(result.zip);
+		},
+
+		progress	: function(result){
+			$("#PRO"+result.fileno).css("width", result.perc+"%");
+		},
+
+		error		: function(error){
+			errors += error.filename+": "+error.err_des+"\n";
+		},
+
+		completed	: function(){
+			if (errors != "") {
+				alert(errors);
+				errors = "";
 			}
-//			$("#column1").append(colname+"/");
-//			$("#column1").append(data.count+"/");
-//			$("#column1").append(data["members"].length+"/");
-//			$("#column1").append(data["members"][1]["member_id"]+"/");
-//			$("#column1").append(data[tablename][0][colname]+"/");
-		} // success func
-		});  // .ajax
-	}); //table
-
-	$(".box:odd").addClass("col1").css("color","red");
-	$(".box:even").addClass("col2").css("color","blue");
-	 $('#container').masonry({
-  	    itemSelector: '.box',
-//		isAnimated:true,
-      	columnWidth: 200
-    });
-});
-    
+		}
+	});   	
+})
 </script>
 
-<body  >
-<section id="content">
-	<h1 style="font-size:120%;"><a href="?">ビジネスでいますぐ使えるIT技術</a></h1>
-        <p style="font-size:120%;">いま注目のIT製品／サービス／技術に関連した動画を「音声がなくても理解できる」「短くても素晴らしさがわかる」ものを厳選してご紹介します</p>
+
+</head>
+
+<body >
 	
-	
-<div id="container" class="transitions-enabled clearfix" data-table="corprep" data-orderby="update_date desc" data-where="update_date>'2012/01/01'">
-	<div class="box" data-row="0">
-		<p data-col="videotag">-</p>
-		<p data-col="corp_name">-</p>
-		<p data-col="rep_text">-</p>
-	
+        <div class="demo" style="position:relative; height:130px;">
+        	<div id="upload" style = "border:2px dashed #ddd; width:120px; height:100px; padding:10px; position:absolute; top:0; left:40px;"></div>
+        	<div id="uploaded" style = "border: 1px solid #ddd; width:600px; height:102px; padding:10px; position:absolute; top:0; left:210px; overflow-y:auto;">
+            </div>
+        </div>
+        
+	<a id="ziparea" href="." ></a>
+	<div id="imglib" style="margin: 0 auto; text-align:center; background:#fff">
 	</div>
-</div> <!-- /#column1  -->
-<div id="vm">
-<p><a id="viphone" href="n3/meishi.html" title="meishi">iPhone</a></p>
-<p><a id="vipad" href="n3/meishi.html" title="meishi">iPad</a></p>
-</div>
- 
- 
-</section>
+        
 </body>
 </html>
-
